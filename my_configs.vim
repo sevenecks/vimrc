@@ -40,3 +40,10 @@ map <down> <nop>
 map <left> <nop>
 map <right> <nop>
 :imap ii <Esc>
+" Default params for ack
+let g:ackprg="ack -H --nocolor --nogroup --column"
+" " Add a mark and search
+nmap <leader>j mA:Ack<space>
+" " Add a mark and search for the word under the cursor
+nmap <leader>ja mA:Ack "<C-r>=expand("<cword>")<cr>"
+nmap <leader>jA mA:Ack "<C-r>=expand("<cWORD>")<cr>"
