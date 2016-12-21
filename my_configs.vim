@@ -24,6 +24,10 @@ set backspace=indent,eol,start
 " " Hide buffer (file) instead of abandoning when switching
 " " to another buffer
 set hidden
+" " Open new split panes to the right and bottom, more natural
+set splitbelow
+set splitright
+
 filetype on
 filetype plugin on
 filetype indent on
@@ -39,7 +43,7 @@ map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
-:imap ii <Esc>
+:imap jk <Esc>
 " Default params for ack
 let g:ackprg="ack -H --nocolor --nogroup --column"
 " " Add a mark and search
@@ -49,3 +53,8 @@ let g:ackprg="ack -H --nocolor --nogroup --column"
 "nmap <leader>jA mA:Ack "<C-r>=expand("<cWORD>")<cr>"
 nnoremap <tab> <c-w>
 nnoremap <tab><tab> <c-w><c-w>
+" make it so j and k move up and down even on wrapped lines"
+nmap k gk
+nmap j gj
+"tabs as spaces
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
