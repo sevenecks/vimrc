@@ -33,9 +33,12 @@ nmap k gk
 nmap j gj
 " map ,ev to edit the my_configs.vim file
 nmap <leader>rce :tabedit ~/.vim_runtime/my_configs.vim<cr>
-
+" turn off search highlighting
+nmap <leader><space> :nohlsearch<cr>
 "============================="
 "--------AUTO COMMANDS--------"
 "============================="
-autocmdcBufWritePosc my_configs.vim source $MYVIMRC
-
+augroup autosouring
+    autocmd!
+    autocmd BufWritePost my_configs.vim source $MYVIMRC
+augroup END
