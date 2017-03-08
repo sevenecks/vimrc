@@ -9,6 +9,13 @@ set number " Display line numbers
 " set terminal colors to 256
 set t_CO=256
 "============================="
+"--------PLUGIN CONFIG--------"
+"============================="
+" Activate the NERDTree when launching vim
+autocmd vimenter * NERDTree
+let g:NERDTreeWinPos = "left"
+
+"============================="
 "---------MAPPINGS------------"
 "============================="
 " Disabling the directional keys
@@ -34,6 +41,12 @@ nmap j gj
 nmap <leader>rce :tabedit ~/.vim_runtime/my_configs.vim<cr>
 " turn off search highlighting
 nmap <leader><space> :nohlsearch<cr>
+" Toggle Nerd Tree with ,nt
+nmap <leader>nt :NERDTreeToggle<cr>
+" Toggle line numbers
+nmap <leader>n :set invnumber<cr>
+
+
 "============================="
 "--------AUTO COMMANDS--------"
 "============================="
