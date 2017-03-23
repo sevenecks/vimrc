@@ -14,7 +14,10 @@ set t_CO=256
 " Activate the NERDTree when launching vim
 autocmd vimenter * NERDTree
 let g:NERDTreeWinPos = "left"
-
+" make nerdtree return to the buffer instead of staying in the window
+autocmd VimEnter * wincmd p
+" make vim close if nerdtree is last open tab
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "============================="
 "---------MAPPINGS------------"
 "============================="
@@ -34,18 +37,28 @@ let g:ackprg="ack -H --nocolor --nogroup --column"
 " make it so j and k move up and down even on wrapped lines"
 nmap k gk
 nmap j gj
+" map matching brace (%) to ,mb
+nmap <leader>mb %
+" map { to % instead of having to use {
+nmap [ %
+nmap y[ y%
 "============================="
+"--------CLIPBOARD------------"
+"============================="
+" make the clipboard shared between vim and the OS
+" only works when vim --version | grep clipboard shows 
+" +clipboard, you can install a new version of VIM to
+" accomplish if needed
+set clipboard=unnamed
+
 "--------LEADER MAPS----------"
 "============================="
-" map ,rce to edit the my_configs.vim file
-nmap <leader>rce :tabedit ~/.vim_runtime/my_configs.vim<cr>
 " turn off search highlighting
 nmap <leader><space> :nohlsearch<cr>
 " Toggle Nerd Tree with ,nt
 nmap <leader>nt :NERDTreeToggle<cr>
 " Toggle line numbers
 nmap <leader>n :set invnumber<cr>
-
 
 "============================="
 "--------AUTO COMMANDS--------"
@@ -61,7 +74,7 @@ augroup END
 " " Open new split panes to the right and bottom, more natural
 set splitbelow
 set splitright
-" Map control + w + control + N for splut management 
+" Map control + w + control + N for split management 
 nmap <C-J> <C-W><C-J>
 nmap <C-K> <C-W><C-K>
 nmap <C-H> <C-W><C-H>
