@@ -91,3 +91,6 @@ nnoremap <tab><tab> <c-w><c-w>
 "============================="
 nmap <leader>p :CtrlP<cr>
 nmap <leader>pr :CtrlPMRU<cr>
+"============================="
+"--------VISUAL TWEAKS--------"
+"============================="
