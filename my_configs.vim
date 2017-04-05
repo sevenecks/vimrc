@@ -42,6 +42,10 @@ nmap <leader>mb %
 " map { to % instead of having to use {
 nmap [ %
 nmap y[ y%
+" ctags mapping
+" rerun tags
+nmap <Leader>ct :!ctags -R --exclude=node_modules --exclude=vendor --exclude=public<cr>
+nmap <Leader>f :tag<space>
 "============================="
 "--------CLIPBOARD------------"
 "============================="
