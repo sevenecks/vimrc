@@ -37,8 +37,6 @@ let g:ackprg="ack -H --nocolor --nogroup --column"
 " make it so j and k move up and down even on wrapped lines"
 nmap k gk
 nmap j gj
-" map matching brace (%) to ,mb
-nmap <leader>mb %
 " map { to % instead of having to use {
 nmap [ %
 nmap y[ y%
@@ -46,6 +44,12 @@ nmap y[ y%
 " rerun tags
 nmap <Leader>ct :!ctags -R --exclude=node_modules --exclude=vendor --exclude=public<cr>
 nmap <Leader>f :tag<space>
+" edit vimrc in a split
+nnoremap <leader>ev :split ~/.vim_runtime/my_configs.vim<cr>
+" edit basic vim in split
+nnoremap <leader>evb :split ~/.vim_runtime/vimrcs/basic.vim<cr>
+" edit extended vim in split
+nnoremap <leader>eve :split ~/.vim_runtime/vimrcs/extended.vim<cr>
 "============================="
 "--------CLIPBOARD------------"
 "============================="
@@ -63,7 +67,7 @@ nmap <leader><space> :nohlsearch<cr>
 nmap <leader>nt :NERDTreeToggle<cr>
 " Toggle line numbers
 nmap <leader>n :set invnumber<cr>
-
+nmap <leader>v :set paste!<cr>
 "============================="
 "--------AUTO COMMANDS--------"
 "============================="
@@ -91,6 +95,15 @@ nnoremap <tab><tab> <c-w><c-w>
 "============================="
 nmap <leader>p :CtrlP<cr>
 nmap <leader>pr :CtrlPMRU<cr>
+" remap controlp's <c-v> (control v) to default to opening splits with enter
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("h")': ['<cr>', '<RightMouse>'],
+    \ }
 "============================="
 "--------VISUAL TWEAKS--------"
 "============================="
+"============================="
+"-------LARAVEL MAPPINGS------"
+"============================="
+nmap <leader>lw :sp routes/web.php<cr>
+nmap <leader>la :sp routes/api.php<cr>
