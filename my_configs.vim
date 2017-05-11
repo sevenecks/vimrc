@@ -42,7 +42,7 @@ nmap [ %
 nmap y[ y%
 " ctags mapping
 " rerun tags
-nmap <Leader>ct :!ctags -R --exclude=node_modules --exclude=vendor --exclude=public<cr>
+nmap <Leader>ct :!ctags -R --exclude=node_modules  --exclude=public<cr>
 nmap <Leader>f :tag<space>
 " edit vimrc in a split
 nnoremap <leader>ev :split ~/.vim_runtime/my_configs.vim<cr>
