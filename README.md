@@ -1,3 +1,8 @@
+# Initial Setup
+
+1. System Preferences -> Keyboard
+2. Tweak keyrepeat and key delay so they repeat very quickly
+
 # The Ultimate vimrc
 
 Over the last 8 years I have used and tweaked Vim. This is my Ultimate vimrc.
