@@ -29,9 +29,6 @@ set history=500
 filetype on
 filetype plugin on
 filetype indent on
-" Activate the NERDTree when launching vim
-autocmd vimenter * NERDTree
-let g:NERDTreeWinPos = "left"
 
 " Set to auto read when a file is changed from the outside
 set autoread

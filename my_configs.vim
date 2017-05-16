@@ -47,7 +47,6 @@ nmap <leader>nt :NERDTreeToggle<cr>
 " Toggle line numbers
 nmap <leader>n :set invnumber<cr>
 
-
 "============================="
 "--------AUTO COMMANDS--------"
 "============================="
