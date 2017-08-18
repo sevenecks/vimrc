@@ -1,6 +1,7 @@
 " " Cancel the compatibility with Vi. Essential if you want
 " " to enjoy the features of Vim
 set nocompatible
+set belloff=all " disable function error bells
 "============================="
 "---------DISPLAY-------------"
 "============================="
@@ -50,6 +51,8 @@ nnoremap <leader>ev :split ~/.vim_runtime/my_configs.vim<cr>
 nnoremap <leader>evb :split ~/.vim_runtime/vimrcs/basic.vim<cr>
 " edit extended vim in split
 nnoremap <leader>eve :split ~/.vim_runtime/vimrcs/extended.vim<cr>
+" edit php snippets in a split
+nnoremap <leader>es :split ~/.vim_runtime/snippets/php.snippets<cr>vGzO<cr>
 "============================="
 "--------CLIPBOARD------------"
 "============================="
