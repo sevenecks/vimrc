@@ -47,12 +47,16 @@ nmap <Leader>ct :!ctags -R --exclude=node_modules  --exclude=public<cr>
 nmap <Leader>f :tag<space>
 " edit vimrc in a split
 nnoremap <leader>ev :split ~/.vim_runtime/my_configs.vim<cr>
+" refresh vim rc
+nnoremap <leader>evr :source ~/.vimrc<cr>
 " edit basic vim in split
 nnoremap <leader>evb :split ~/.vim_runtime/vimrcs/basic.vim<cr>
 " edit extended vim in split
 nnoremap <leader>eve :split ~/.vim_runtime/vimrcs/extended.vim<cr>
 " edit php snippets in a split
 nnoremap <leader>es :split ~/.vim_runtime/snippets/php.snippets<cr>vGzO<cr>
+" close syntastic error window
+nnoremap <leader>sr :SyntasticReset<cr>
 "============================="
 "--------CLIPBOARD------------"
 "============================="
@@ -71,12 +75,14 @@ nmap <leader>nt :NERDTreeToggle<cr>
 " Toggle line numbers
 nmap <leader>n :set invnumber<cr>
 nmap <leader>v :set paste!<cr>
+" resize +10
+nmap <leader>r :resize +10<cr>
 "============================="
 "--------AUTO COMMANDS--------"
 "============================="
 augroup autosouring
     autocmd!
-    autocmd BufWritePost my_configs.vim source $MYVIMRC
+    autocmd BufWritePost my_configs.vim source ~/.vimrc
 augroup END
 
 "============================="
