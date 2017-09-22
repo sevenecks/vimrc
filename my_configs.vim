@@ -9,6 +9,8 @@ set title " Update the title of your window or your terminal
 set number " Display line numbers
 " set terminal colors to 256
 set t_CO=256
+" we use lightline so we don't need the -- INSERT -- or -- VISUAL -- mode indicators
+set noshowmode
 "============================="
 "--------PLUGIN CONFIG--------"
 "============================="
@@ -82,7 +84,9 @@ nmap <leader>r :resize +10<cr>
 "============================="
 augroup autosouring
     autocmd!
-    autocmd BufWritePost my_configs.vim source ~/.vimrc
+    " nested is required because of the lightline plugin, without it
+    " we lose the lineline status bar on save
+    autocmd BufWritePost my_configs.vim nested source ~/.vimrc
 augroup END
 
 "============================="
