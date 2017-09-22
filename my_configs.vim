@@ -111,8 +111,8 @@ let g:ctrlp_prompt_mappings = {
 "============================="
 "--------VISUAL TWEAKS--------"
 "============================="
-"
-autocmd BufNewFile,BufRead *.vue set filetype=html "When opening or creating a .vue file set the filetype to HTML for proper rendering
+" this broke vue rendering
+"autocmd BufNewFile,BufRead *.vue set filetype=html "When opening or creating a .vue file set the filetype to HTML for proper rendering
 
 "============================="
 "-------LARAVEL MAPPINGS------"
