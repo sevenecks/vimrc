@@ -3,6 +3,15 @@
 set nocompatible
 set belloff=all " disable function error bells
 "============================="
+"----------UNDOS--------------"
+"============================="
+" make it so these characters break up long inserts and you
+" can undo 'u' them individually instead of huge blocks
+inoremap . .<c-g>u
+inoremap ? ?<c-g>u
+inoremap ! !<c-g>u
+inoremap , ,<c-g>u
+"============================="
 "---------DISPLAY-------------"
 "============================="
 set title " Update the title of your window or your terminal
@@ -24,24 +33,18 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 "============================="
 "---------MAPPINGS------------"
 "============================="
-" Disabling the directional keys
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
 " map jk to escape key in insert mode 
 :imap jk <Esc>
+" neovim terminal mode remap control + \ control + n to jk like in insert mode 
+:tnoremap jk <C-\><C-n>
 " Default params for ack
 let g:ackprg="ack -H --nocolor --nogroup --column"
 " make it so j and k move up and down even on wrapped lines"
 nmap k gk
 nmap j gj
-" map { to % instead of having to use {
+" map [ & ] to % instead of having to use {
 nmap [ %
+nmap ] %
 nmap y[ y%
 " ctags mapping
 " rerun tags
