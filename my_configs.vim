@@ -35,8 +35,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 "============================="
 " map jk to escape key in insert mode 
 :imap jk <Esc>
-" neovim terminal mode remap control + \ control + n to jk like in insert mode 
-:tnoremap jk <C-\><C-n>
 " Default params for ack
 let g:ackprg="ack -H --nocolor --nogroup --column"
 " make it so j and k move up and down even on wrapped lines"
@@ -126,3 +124,13 @@ let g:ctrlp_prompt_mappings = {
 "============================="
 nmap <leader>lw :sp routes/web.php<cr>
 nmap <leader>la :sp routes/api.php<cr>
+
+" disable (by removing) phpcs from the syntax checker
+let g:syntastic_php_checkers = ['php', 'phpmd']
+
+"============================="
+"-------NEOVIM  MAPPINGS------"
+"============================="
+" neovim terminal mode remap control + \ control + n to jk like in insert mode
+:tnoremap jk <C-\><C-n>
+
