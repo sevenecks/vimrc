@@ -67,7 +67,10 @@ nnoremap <leader>sr :SyntasticReset<cr>
 " only works when vim --version | grep clipboard shows 
 " +clipboard, you can install a new version of VIM to
 " accomplish if needed
-set clipboard=unnamed
+
+" on mac unnamed works, on ubuntu unnamedplus works
+" set clipboard=unnamed
+set clipboard=unnamedplus
 
 "--------LEADER MAPS----------"
 "============================="
