@@ -48,6 +48,8 @@ nmap y[ y%
 " rerun tags
 nmap <Leader>ct :!ctags -R --exclude=node_modules  --exclude=public<cr>
 nmap <Leader>f :tag<space>
+" delete empty lines
+nmap <Leader>del :g/^$/d<cr>
 " edit vimrc in a split
 nnoremap <leader>ev :split ~/.vim_runtime/my_configs.vim<cr>
 " refresh vim rc
@@ -128,6 +130,22 @@ nmap <leader>la :sp routes/api.php<cr>
 " disable (by removing) phpcs from the syntax checker
 let g:syntastic_php_checkers = ['php', 'phpmd']
 
+"============================="
+"------ RECOMB MAPPINGS-------"
+"============================="
+"
+"get rid of empty lines
+nmap <leader>1 :%s/^\n//g<cr>
+" get rid of two spaces after a period
+nmap <leader>2 :%s/\.  /. /g<cr>
+" get rid of two spaces after an !
+nmap <leader>3 :%s/!  /! /g<cr>
+" get rid of two spaces after a ?
+nmap <leader>4 :%s/?  /? /g<cr>
+" get rid of two spaces after a quote
+nmap <leader>5 :%s/"  /" /g<cr>
+" get rid of spaces after a period before a new line
+nmap <leader>6 :%s/\. \n/.\r/g<cr>
 "============================="
 "-------NEOVIM  MAPPINGS------"
 "============================="
